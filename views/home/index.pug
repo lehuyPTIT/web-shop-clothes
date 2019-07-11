@@ -1,18 +1,23 @@
 head
   link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+  link(rel='stylesheet', href='/styles/hi.css')
 body
-  nav.navbar.bavbar-dark.bg-dark(style="background-color: #e3f2fd")
-    a.nav-link(href='#')
-      | Home 
-      span.sr-only (current)
+  .menu
+  .menu-element
+    a.btn.btn-primary(href='#') Home
+    a.btn.btn-primary(href='#') Pages
+    a.btn.btn-primary(href='#') Contact
+    a.btn.btn-primary(href='#') Cart
+    a.btn.btn-primary(href='/auth') Login
 
-  .container.mt-100
+  .container.mt-100.product
+    p.title-product New Products
     .row
       each product in products
         .col-sm-6.col-md-4.col-lg-3
           .card.mb-3
-            img.card-img-top(src=product.image, alt='...')
-            .card-body
-              h5.card-title=product.name
-              p.card-text=product.description
-              a.btn.btn-primary(href='/cart/add/'+product.id) Add to cart
+            img.card-img-top-20(src=product.image, alt='...')
+            div
+              h5=product.name
+              p=product.price
+              a.btn.btn-primary(href='/cart/add/'+product.id) Buy

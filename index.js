@@ -6,6 +6,7 @@ var mongoose=require('mongoose');
 require('dotenv').config();
 
 var homeRoutes =require('./routes/home.route');
+var authRoutes =require('./routes/auth.route');
 
 app.use(express.static('public'));
 
@@ -16,6 +17,7 @@ app.set('views', './views');
 
 
 app.use('/home',homeRoutes);
+app.use('/auth',authRoutes);
 
 
 

@@ -1,0 +1,30 @@
+
+head
+  link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+  link(rel='stylesheet', href='/styles/login.css')
+  link(rel='stylesheet', href='/styles/hi.css')
+body
+  .menu
+  .menu-element
+    a.btn.btn-primary(href='/home') Home
+    a.btn.btn-primary(href='#') Pages
+    a.btn.btn-primary(href='#') Contact
+    a.btn.btn-primary(href='#') Cart
+    a.btn.btn-primary(href='#') Login
+
+  .product
+    p.title-product Login
+    div.form
+      form
+        h2 Login
+        div.input-group
+          input#username(type='text',required)
+          label(for='username') Username
+        div.input-group
+          input#password(type='text',required)
+          label(for='password') Username
+        button.btn.btn-primary(type='submit') Login
+        p Don't have an account? 
+          a(href="#") Sign up
+
+

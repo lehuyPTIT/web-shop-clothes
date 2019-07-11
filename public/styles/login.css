@@ -1,0 +1,53 @@
+.input-group{
+	margin: 1.6rem 0;
+	position: relative;
+}
+form{
+	background-color: white;
+	padding: 1rem 1.2rem;
+	box-shadow: 0.4px 4px 12px rgba(0,0,0,0.2);
+	border-radius: 1rem;
+	text-shadow: .4px .4px 5px rgba(0,0,0,.2);
+	margin: 
+}
+form h2{
+	text-align: center;
+	font-weight: 400;
+	user-select: none;
+}
+form input{
+	display: block;
+	border: none;
+	border-bottom: 1px solid dodgerblue;
+	outline: none;
+	padding: 6px 4px;
+	width: 100%;
+}
+form label{
+	position: absolute;
+	left: 0;
+	top: 15px;
+	font-weight: 300;
+	font-size: 15px;
+	pointer-events: none;
+	color: gray;
+	transition: 200ms ease;
+}
+input:focus + label, input:valid +label {
+	top:-10px;
+	left: 10px;
+	font-size: 14px;
+	color: dodgerblue;
+}
+form button{
+	background-color: dodgerblue;
+	padding: 0.5rem 1rem;
+	border: none;
+	color: white;
+	border-radius: 2rem;
+	width: 100%;
+	cursor: pointer;
+}
+.form{
+	width: 40%;
+}

@@ -1,0 +1,35 @@
+.menu-element{
+	display: flex;
+	justify-content:center;
+	list-style: none;
+	margin: 0.5em 0;
+	background-color: #fff;
+
+}
+.menu-element a{
+	/*font-size: 18px;
+	font-weight: bolder;
+	color: #333;
+	border: none solid #AAA;
+	border-radius: 5px;
+	padding: 10px 10px;
+	background-color: #dfdede;
+	margin: 20px;*/
+	/*.menu-element a:hover{
+	background-color: #AAA;
+
+}*/
+	margin: 20px;
+}
+.product{
+	background-color: #f9f9fa;
+}
+.product {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.product .title-product{
+	padding:10px 0;
+	font-size: 70px;
+}

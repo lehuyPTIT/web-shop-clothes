@@ -16,7 +16,7 @@ app.set('view engine', 'pug');
 app.set('views', './views');
 
 
-app.use('/home',homeRoutes);
+app.use('/',homeRoutes);
 app.use('/auth',authRoutes);
 
 

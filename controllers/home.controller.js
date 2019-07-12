@@ -8,3 +8,7 @@ module.exports.home=function( req, res ){
 		})
 	})
 }
+module.exports.index=function( req, res ){
+	res.redirect('/home');
+}
+

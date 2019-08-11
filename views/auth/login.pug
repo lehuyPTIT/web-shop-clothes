@@ -1,25 +1,18 @@
-
 head
   link(rel='stylesheet', href='/styles/login.css')
   link(rel='stylesheet', href='/styles/hi.css')
 body
-  .menu-element
-    a.btn.btn-primary(href='/home') Home
-    a.btn.btn-primary(href='#') Pages
-    a.btn.btn-primary(href='#') Contact
-    a.btn.btn-primary(href='#') Cart
-    a.btn.btn-primary(href='#') Login
-
+  
   .product
-      form
+      form(action="/auth",method="POST")
         h2 Login
         div.input-group
-          input#username(type='text',required)
+          input#username(type='text',name="username",required)
           label(for='username') Username
         div.input-group
-          input#password(type='password',required)
+          input#password(type='password',name="password",required)
           label(for='password') Password
-        button(type='submit') Login
+        button Login
         div
         p.sign-up Don't have an account? 
           a(href="#") Sign up

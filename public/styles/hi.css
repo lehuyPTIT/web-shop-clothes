@@ -1,30 +1,40 @@
-.menu-element{
-	display: flex;
-	justify-content:center;
-	list-style: none;
-	padding-bottom: 0.5em;
-	background:white;
-
+*{
+	margin:0;
+	padding: 0;
+	font-family: "Quicksand", sans-serif;
+	border-radius: 0 !important;
+}
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+.dropdown-content{
+	display: none;
+	position: absolute;
+	z-index: 10;
+	background-color: #f5f5f5;
 
 }
-.menu-element a{
-	background-color: white;
-	margin: 20px;
-	color: black;
-	text-decoration: none;
-	width: 100px;
-	padding: 10px;
-	border-radius: 15px;
-	border: none;
+.dropdown:hover .dropdown-content{
+	display: block;
+}
+
+.list-products{
+
+	background-color: #f8f9fa;;
+}
+h2 {
+	text-align: center !important;
+}
+
+h5{
 	text-align: center;
 }
-.menu-element a:hover{
-	background-color: #f2f2f2;
+.cart-price{
+	text-align: center;			
 }
-
-.product {
+.cart-view{
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+	justify-content: center;
+	text-decoration: none !important;;
 }

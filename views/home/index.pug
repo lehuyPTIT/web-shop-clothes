@@ -2,15 +2,15 @@ extends ../layouts/common.pug
 block content
     .row
       .col-1
-      .col-10(style='height:750px')
+      .col-10.slider-header(style='height:700px')
         #carouselExampleControls.carousel.slide(data-ride='carousel')
           .carousel-inner
             .carousel-item.active
-              img.d-block.w-100.h-100(src='images/hero-1.jpg', alt='...')
+              img.d-block.w-100(src='images/hero-1.jpg', alt='...')
             .carousel-item
-              img.d-block.w-100.h-100(src='images/hero-1.jpg', alt='...')
+              img.d-block.w-100(src='images/hero-2.jpg', alt='...')
             .carousel-item
-              img.d-block.w-100.h-100(src='images/hero-1.jpg', alt='...')
+              img.d-block.w-100(src='images/hero-3.jpg', alt='...')
           a.carousel-control-prev(href='#carouselExampleControls', role='button', data-slide='prev')
             span.carousel-control-prev-icon(aria-hidden='true')
             span.sr-only Previous
@@ -23,84 +23,176 @@ block content
       .col-1
       .col-10
         .row
-          .col-md-4.col-sm-6
-            .card(style='width:100%')
-              img.card-img-top(src='images/banner-2.jpg', alt='...')
-          .col-md-4.col-sm-6
-            .card(style='width: 100%;')
-              img.card-img-top(src='images/banner-1.jpg', alt='...')
-          .col-md-4.col-sm-6
-            .card(style='width: 100%;')
-              img.card-img-top(src='images/banner-3.jpg', alt='...')
+          .col-md-4.col-12.mb-3
+            .card-banner(style='width:100%')
+              a(href='#')
+                img.card-img-top(src='images/banner-2.jpg', alt='...')
+          .col-md-4.col-12.mb-3
+            .card-banner(style='width: 100%;')
+              a(href='#')
+                img.card-img-top(src='images/banner-1.jpg', alt='...')
+          .col-md-4.col-12.mb-3
+            .card-banner(style='width: 100%;')
+              a(href='#')
+                img.card-img-top(src='images/banner-3.jpg', alt='...')
     .row
       .col-1
       .col-10.mt-5.product.list-products
-        p.list-products-title
-          h2 New Products
+        h2 New Products
         .container
           .row
             each product in products
-              .col-sm-6.col-md-4.col-lg-3
-                .card.mb-3
-                  img.card-img-top-20(src=product.image, alt='...')
-                  div
-                    h5.cart-title=product.name
-                    p.cart-price=product.price
-                    .cart-view
-                      a(href='#') 
-                        i.fas.fa-shopping-cart
-                      a(href='/cart/add/'+product.id) Xem chi tiet
-    .container
+              .col-lg-3.col-md-6.col-12.mb-3
+                .card
+                  img(src=product.image, alt='...')
+                  div.title
+                    .cart-title=product.name
+                    p.cart-price
+                      span.price-old $218
+                      span.price-sale $127.22
+                  .actions
+                    a(href='cart/add/'+product._id)
+                      i.fa.fa-shopping-cart
+                    a.icon-mid(href='#')
+                      i.fa.fa-eye
+                    a(href='#')
+                      i.fa.fa-sync
+                  .icon-like
+                    i.fas.fa-heart
+    
     .container.mt-1.product
       .row.mt-5
-        .col-md-4.col-sm-6
+        .col-md-4.col-12.mb-3
           .card(style='width:100%')
             img.card-img-top(src='images/banner-4.jpg', alt='...')
-        .col-md-4.col-sm-6
+        .col-md-4.col-12.mb-3
           .card(style='width:100%')
             img.card-img-top(src='images/banner-5.jpg', alt='...')
-        .col-md-4.col-sm-6
+        .col-md-4.col-12.mb-3
           .card(style='width:100%')
             img.card-img-top(src='images/banner-6.jpg', alt='...')
     .container.mt-1.product
       .row.mt-5
-        .col-md-8.col-sm-12
+        .col-md-8.col-12.mb-3
           .card(style='width:100%')
             img.card-img-top(src='images/banner-7.jpg', alt='...')
-        .col-md-4.col-sm-6
+        .col-md-4.col-12.mb-3
           .card(style='width:100%')
             img.card-img-top(src='images/banner-8.jpg', alt='...')
+    .row
+      .col-1
+      .col-10.mt-5.product.list-products
+        p.list-products-title
+            h2 POPULER IN THIS WEEK
+        .container
+            .row.center
+              each product in products
+                .col-sm-6.col-md-4.col-lg-3
+                  .card.mb-3
+                    img.card-img-top-20(src=product.image, alt='...')
+                    div.title
+                      h5.cart-title=product.name
+                      p.cart-price-populer
+                        span $999
+      .container
+        .row
+          .col-lg-4
+            .row.mt-5
+              .col-4
+                img(src='images/fast-delivery.png')
+              .col-8
+                h3.title-cart Free Home Delivery
+                p.text-cart Provide free home delivery for all product over $100
+          .col-lg-4
+            .row.mt-5
+              .col-4
+                img(src='images/quality.png')
+              .col-8
+                h3.title-cart Free Home Delivery
+                p.text-cart Provide free home delivery for all product over $100
+          .col-lg-4
+            .row.mt-5
+              .col-4
+                img(src='images/return.png')
+              .col-8
+                h3.title-cart Free Home Delivery
+                p.text-cart Provide free home delivery for all product over $100
+    .container-fluid
+      .row
+        .col-1
+        .col-10.box
+          .row
+            .col-xs-12.col-sm-6.col-12
+              .row
+                .col-sm-4.col-12
+                .col-sm-8.col-12.mt-3
+                  h4.text-left Subscribe to our Newsletter
+                  p Subscribe today and get 15% 
+                    discount cupon code
+            .col-xs-12.col-sm-6.sub.col-12
+              form.form-inline.my-2.my-lg-0
+                .row
+                  input.form-control.mr-sm-2(type='email', placeholder='Enter your email')
+                  button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Subscribe
     .container
       .row
-        .col-lg-4.mt-2
-          .card.mb-3
-            img.card-img-top-20(src='images/quality.png', alt='...')
-        .col-md-6.mt-2
-           h7 Free Home Delivery
+        .col-sm-3.col-12
+          .about
+            img(src='images/logo.png')
+            p.about-text Pellentesque mollis nec orciid tincidunt. Sed mollis risus eu nisi aliquet, sit amet fermentum justo.
+        .col-sm-2.col-12
+          .about
+            p Company
+              p
+                a(href='#') About Us
+              p
+                a(href='#') Jobs
+              p
+                a(href='#') Press
+              p
+                a(href='#') Contact
+        .col-sm-2.col-12
+          .about
+            p Company
+              p
+                a(href='#') About Us
+              p
+                a(href='#') Jobs
+              p
+                a(href='#') Press
+              p
+                a(href='#') Contact
+        .col-sm-2.col-12
+          .about
+            p Company
+              p
+                a(href='#') About Us
+              p
+                a(href='#') Jobs
+              p
+                a(href='#') Press
+              p
+                a(href='#') Contact
 
-    script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', crossorigin='anonymous')
-    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', crossorigin='anonymous')
-    script(src='owlcarousel1/jquery.min.js')
-    script(src='owlcarousel1/owl.carousel.js')
-    script.
-        $('.owl-carousel').owlCarousel({
-        loop:true,
-        margin:10,
-        nav:true,
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:3
-            },
-            1000:{
-                items:5
-            }
-        }
-      })
+        .col-sm-3.col-12
+          .about
+            p Contact Us
+            p (+8436) 4121 231
+            p lehuyPTIT@gmail.com
+            p PO Box 1622 Colins Street West
+    //- script(type='text/javascript', src='//code.jquery.com/jquery-1.11.0.min.js')
+    //- script(type='text/javascript', src='//code.jquery.com/jquery-migrate-1.2.1.min.js')
+    script(src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous")
+    script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous")
+    script(type='text/javascript', src='../slick.min.js')
+    script(type='text/javascript', src='../aaa.js')
 
+
+
+
+    
+ 
 
       
 

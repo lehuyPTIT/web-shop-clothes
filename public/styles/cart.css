@@ -1,0 +1,20 @@
+body{
+	margin:0;
+	padding: 0;
+	font-family: "Quicksand", sans-serif;
+}
+.header{
+	background-color: #e0e6ec;
+}
+.pro-thumbnail{
+	width: 80px;
+}
+.pro-thumbnail img{
+	height: 80px;
+}
+.row-product td{
+	vertical-align: middle;
+}
+.row-product-count{
+	width: 50px !important;
+}

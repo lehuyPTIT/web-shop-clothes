@@ -1,29 +1,55 @@
 html
   head
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
     link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
-    link(rel='stylesheet', href='/styles/hi.css')
-    link(rel='stylesheet', href='owlcarousel1/owl.carousel.min.css')
-    link(rel='stylesheet', href='owlcarousel1/owl.theme.default.min.css')
-
-    nav.navbar.navbar-expand-lg.navbar-light.bg-light
-      .container
-        a.navbar-brand(href='#')
-          img(src='images/logo.png')
-        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
-        #navbarSupportedContent.collapse.navbar-collapse
-          ul.navbar-nav.mr-auto
-            li.nav-item.active
-              a.nav-link(href='#') Home
-            li.nav-item.active
-              a.nav-link(href='#') shop
-            li.nav-item.dropdown.active
+    link(rel='stylesheet', href='../styles/home.css')
+    link(href="../font-awesome/css/all.css",rel="stylesheet")
+    link(rel='stylesheet', href='../styles/login.css')
+    link(rel='stylesheet', href='../styles/cart.css')
+    link(href="https://fonts.googleapis.com/css?family=Livvic&display=swap",rel="stylesheet")
+    link(rel='stylesheet', type='text/css', href='../styles/slick.css')
+    link(rel='stylesheet', type='text/css', href='../styles/slick-theme.css')
+  body
+    nav.navbar.navbar-expand-sm.navbar-dark
+      a.navbar-brand(href='/home')
+        img(src='../images/logo.png')
+      button.navbar-toggler.bg-dark(type='button', data-toggle='collapse', data-target='#navbarSupportedContent')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse.justify-content-center
+        ul.navbar-nav
+          li.nav-item.active.nav-item-has-center
+            .nav-item-name
+              a.nav-link(href='/') Home
+              i.fas.fa-caret-down
+          li.nav-item.dropdown.nav-item-has-center
+            .nav-item-name
+              a#navbarDropdown.nav-link(href='#') Shop
+              i.fas.fa-caret-down
+            .dropdown-content
+              a.dropdown-item(href='#') Shop 1
+              a.dropdown-item(href='#') Shop 2
+              a.dropdown-item(href='#') Shop 3
+          li.nav-item.dropdown.nav-item-has-center
+            .nav-item-name
               a#navbarDropdown.nav-link(href='#') Pages
-              .dropdown-content
-                a.dropdown-item(href='#') Action
-                a.dropdown-item(href='#') Another action
-                a.dropdown-item(href='#') Something else here
-            li.nav-item
-              a.nav-link.active(href='#') Blog
+              i.fas.fa-caret-down
+            .dropdown-content
+              a.dropdown-item(href='#') Pages 1
+              a.dropdown-item(href='#') Pages 2
+              a.dropdown-item(href='#') Pages 3
+          li.nav-item.nav-item-has-center
+            .nav-item-name
+              a.nav-link(href='#') Blog
+              i.fas.fa-caret-down
+          li.nav-item
+            .nav-item-name
+              a.nav-link(href='/contact') Contact
+              i.fas.fa-caret-down
+      .navbar-nav.nav-auth
+        a.nav-link(href='/auth/cart')
+          img(src='../images/cart.png')
+        a.nav-link(href='/auth')
+          img(src='../images/user.png')
 
     block content
   

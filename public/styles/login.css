@@ -1,41 +1,63 @@
-body{
-	padding: 0;
-	margin: 0;
+.user{
+	display: flex;
+	align-items: center;
 }
+.login-register-separator {
+
+    width: 1px;
+    height: 300px;
+    background-color: #ccc;
+    display: block;
+    margin: auto;
+    margin-top: 150px;
+}
+
 .input-group{
 	margin: 1.6rem 0;
 	position: relative;
-	width: 80%;
-}
-form{
+	width: 307.42px;
+} 
+.form-login{
 	margin-top: 2em;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	background-color: white;
 	padding: 1rem 1.2rem;
-	box-shadow: 0.4px 4px 12px rgba(0,0,0,0.2);
-	border-radius: 1rem;
+	border-radius: 1rem !important;
 	text-shadow: .4px .4px 5px rgba(0,0,0,.2);
-
 }
 form h2{
 	text-align: center;
 	font-weight: 400;
 	user-select: none;
 }
+
 form input{
 	display: block;
 	border: none;
-	border-bottom: 1px solid dodgerblue;
+	border: 1px solid black; 
+	border-radius:5rem;
 	outline: none;
-	padding: 6px 4px;
+	padding: 6px 15px;
 	width: 100%;
+}
+.button-login{
+	background-color:#373b3e;
+	border: none;
+	color: white;
+	padding: 10px 2px;
+	font-size: 20px;
+	border-radius: 5rem !important;
+	width: 30%;
+	cursor: pointer;
+	align-items: center;
+	color: white;
 }
 form label{
 	position: absolute;
-	left: 0;
-	top: -5px;
+	left: 5px;
+	top:10px;
 	font-weight: 300;
 	font-size: 20px;
 	pointer-events: none;
@@ -43,27 +65,12 @@ form label{
 	transition: 200ms ease;
 }
 input:focus + label, input:valid +label {
-	top:-18px;
-	left: 5px;
+	top:-30px;
+	left: 10px;
 	font-size: 20px;
-	color: dodgerblue;
-}
-
-form button{
-	background-color: dodgerblue;
-	padding: 0.5rem 1rem;
-	border: none;
-	color: white;
-	font-size: 20px;
-	border-radius: 5rem;
-	width: 50%;
-	cursor: pointer;
-	align-items: center;
-	margin-top:2rem;
 	color: black;
-	background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
 }
-form button:hover{
+.button-login:hover{
 	outline: none;
 	background-color: black;
 }	
@@ -75,4 +82,38 @@ form button:hover{
 }
 .sign-up a{
 	text-decoration: none;
+}
+.form-register{
+	display: flex;
+	margin-left: auto;
+}
+.acount-register{
+	margin-left:30px;
+}
+.register-form{
+	margin-left: 0px;
+}
+@media (max-width: 575.98px){
+	.user{
+		display: flex;
+		flex-direction: column;
+	}
+	.input-group{
+		width: 100%;
+	}
+	.form-register{
+		display: flex;
+		flex-direction: column;
+	}
+	.acount-register{
+		margin-left:0px;
+	}
+	.login-register-separator {
+
+		width: 1px;
+		height: 100px;
+		background-color: #ccc;
+		display: block;
+		margin: auto;
+	}
 }

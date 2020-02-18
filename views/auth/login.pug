@@ -1,20 +1,49 @@
-head
-  link(rel='stylesheet', href='/styles/login.css')
-  link(rel='stylesheet', href='/styles/hi.css')
-body
-  
-  .product
-      form(action="/auth",method="POST")
-        h2 Login
-        div.input-group
-          input#username(type='text',name="username",required)
-          label(for='username') Username
-        div.input-group
-          input#password(type='password',name="password",required)
-          label(for='password') Password
-        button Login
-        div
-        p.sign-up Don't have an account? 
-          a(href="#") Sign up
+extends ../layouts/common.pug
+block content
+  .container-fluid
+    .row
+      .col-12.text-center.pt-5.header
+        h3 LOGIN & REGISTER
+        p Home > Login & Register
+  .container-fluid.user
+    .login-form.col-sm-4.col-12.ml-auto
+        form.form-login(action="/auth",method="POST")
+          h2 Login
+          if errors
+            each error in errors
+              .alert.alert-danger=error
+          div.input-group
+            input#username(type='text',name="username",required)
+            label(for='username') Username
+          div.input-group
+            input#password(type='password',name="password",required)
+            label(for='password') Password
+          button.button-login Login
+          div
+          p.sign-up
+    .col-lg-2.col-12.mb-40.text-center
+      span.login-register-separator 
+    .register-form.col-sm-4.col-12.mr-auto
+      form.form-login(action="/auth",method="POST")
+        h2 Register
+        .form-register
+          div.information
+            div.input-group
+              input#yourName(type='text',name="yourname",required)
+              label(for='yourName') Yourname
+            div.input-group
+              input#email(type='email',name="email",required)
+              label(for='email') Email
+            div.input-group
+              input#comfirmPassword(type='password',name="comfirmPassword",required)
+              label(for='comfirmPassword') Comfirm Password
+          div.acount-register
+            div.input-group
+              input#userName(type='password',name="userNameReg",required)
+              label(for='userName') User Name
+            div.input-group
+              input#passwordReg(type='password',name="passwordReg",required)
+              label(for='passwordReg') Password
+            button.button-login Register
 
 

@@ -1,0 +1,17 @@
+extends ../layouts/common.pug
+block content
+  .container-fluid
+    .row
+      .col-12.text-center.pt-5.header
+        h3 CONTACT
+        p Home > Contact
+  .container
+    .contact-form
+      div
+        input#username(type='text',placeholder='Name',name="username",required)
+        input#password(type='password',placeholder='Email',name="email",required)
+      div
+        input#username(type='text',placeholder='Subject',name="username",required)
+        input#password(type='password',placeholder='Message',name="email",required)
+        button Send
+    .contact-infor

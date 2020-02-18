@@ -11,4 +11,7 @@ module.exports.home=function( req, res ){
 module.exports.index=function( req, res ){
 	res.redirect('/home');
 }
+module.exports.contact=function(req,res){
+	res.render('home/contact')
+}
 

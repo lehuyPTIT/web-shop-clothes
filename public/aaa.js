@@ -3,7 +3,7 @@ $(document).ready(function(){
 $('.center').slick({
     dots: true,
     infinite: false,
-    speed: 300,
+    speed: 100,
     slidesToShow: 3,
     slidesToScroll: 1,
     mobileFirst:true,
@@ -36,9 +36,6 @@ $('.center').slick({
           dots: true
         }
       }
-      // You can unslick at a given breakpoint now by adding:
-      // settings: "unslick"
-      // instead of a settings object
     ]
   });
   });

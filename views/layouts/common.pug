@@ -46,10 +46,12 @@ html
               a.nav-link(href='/contact') Contact
               i.fas.fa-caret-down
       .navbar-nav.nav-auth
-        a.nav-link(href='/auth/cart')
+        a.nav-link.store(href='/auth/cart')
           img(src='../images/cart.png')
-        a.nav-link(href='/auth')
+          span=`(${count})`
+        a.auth.nav-link(href='/auth')
           img(src='../images/user.png')
+        
 
     block content
   

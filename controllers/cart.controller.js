@@ -1,23 +1,30 @@
-var User=require('../models/session.model');
+var Session=require('../models/session.model');
+
 module.exports.cart=function(req,res){
 	res.render('auth/cart.pug')
 }
 module.exports.addToCart=function(req,res,next){
-	var productId=req.params.product_Id;
-	console.log(productId);
-	// var sessionId=req.signedCookies.sessionId;
-	// if(!sessionId){
-	// 	res.redirect('/product');
-	// 	return; 
-	// }
-	// var count=db.get('sessions')
-	// .find({id: sessionId})
-	// .get('cart.'+productId,0);
+	let  productId=req.params.product_Id;
+	let sessionId=req.signedCookies.sessionId;
+	if(!sessionId){
+		res.redirect('/home');
+		return; 
+		}
+	Session.findOne({sessionId:sessionId}).then(function(session){
+		if(!session){
+			let newSession=new Session({
+				sessionId:sessionId,
+				cart:[productId]
 
-	// db.get('sessions')
-	// .find({id:sessionId})
-	// .set('cart.'+productId,count+1)
-	// .write();
 
-	res.redirect('/');
+			})
+			newSession.save();
+		}
+		else{
+			session.cart=[...session.cart,productId]
+			session.save();
+		}
+	})
+	res.redirect('/home');
+
 }

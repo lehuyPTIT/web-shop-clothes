@@ -1,10 +1,9 @@
 var mongoose = require('mongoose');
 
 var sessionSchema = new mongoose.Schema({
-	name : String,
-	price: String,
-	image:String
+	sessionId:String,
+	cart:[]																				
 });
 
-var Product = mongoose.model('Session', sessionSchema, 'sessions');
-module.exports=Product;
+var Session = mongoose.model('Session', sessionSchema, 'sessions');
+module.exports=Session;

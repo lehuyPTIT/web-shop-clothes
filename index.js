@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser')
 
 require('dotenv').config();
-const port = process.env.PORT||3001;
+const port = process.env.PORT || 3001;
 var homeRoutes =require('./routes/home.route');
 var authRoutes =require('./routes/auth.route');
 var cartRoutes=require('./routes/cart.route');

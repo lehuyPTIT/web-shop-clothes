@@ -43,12 +43,13 @@ html
               i.fas.fa-caret-down
           li.nav-item
             .nav-item-name
-              a.nav-link(href='/contact') Contact
+              a.nav-link(href='#') Contact
               i.fas.fa-caret-down
       .navbar-nav.nav-auth
         a.nav-link.store(href='/auth/cart')
           img(src='/images/cart.png')
-          span=`(${count})`
+          if count
+            span=`(${count})`
         a.auth.nav-link(href='/auth')
           img(src='/images/user.png')
         

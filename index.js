@@ -23,7 +23,6 @@ mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true });
 app.set('view engine', 'pug');
 app.set('views', './views');
 
-
 app.use('/',homeRoutes);
 app.use('/auth',authRoutes);
 app.use('/cart',cartRoutes);

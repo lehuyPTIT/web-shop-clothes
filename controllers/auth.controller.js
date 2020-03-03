@@ -1,7 +1,8 @@
 var User=require('../models/user.model');
 
 module.exports.login=function( req, res ){
-	res.render('auth/login');
+	console.log(res.locals.a);
+	res.render('auth/login',{count:res.locals.a});
 }
 module.exports.cart=function(req,res){
 	res.render('auth/cart');

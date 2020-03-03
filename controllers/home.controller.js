@@ -8,9 +8,7 @@ module.exports.home=function( req, res,next ){
 		if(!ses)count=0;
 		else count=ses.cart.length;
 		Product.find().then(function(products){
-				res.render('home/index',{
-			products: products,count:count
-			})
+				res.redirect('/');
 		})
 	})
 }	
@@ -18,13 +16,15 @@ module.exports.index=function( req, res ){
 	let sessionId=req.signedCookies.sessionId;
 	Session.findOne({sessionId:sessionId}).then(function(ses){
 		let count;
-		if(!ses)count=0;
+        if(!ses)count=0;
 		else count=ses.cart.length;
+		res.locals.count=count;
 		Product.find().then(function(products){
 				res.render('home/index',{
 			products: products,count:count
 			})
 		})
+		
 	})}
 module.exports.contact=function(req,res){
 	res.render('home/contact')

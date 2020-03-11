@@ -15,8 +15,6 @@ module.exports.addToCart=function(req,res,next){
 			let newSession=new Session({
 				sessionId:sessionId,
 				cart:[productId]
-
-
 			})
 			newSession.save();
 		}
@@ -25,6 +23,6 @@ module.exports.addToCart=function(req,res,next){
 			session.save();
 		}
 	})
-	res.redirect('/home');
+	res.redirect('/');
 
 }

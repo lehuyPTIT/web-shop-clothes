@@ -10,8 +10,10 @@ const port = process.env.PORT || 3001;
 var homeRoutes =require('./routes/home.route');
 var authRoutes =require('./routes/auth.route');
 var cartRoutes=require('./routes/cart.route');
-var authMiddleware=require('./middlewares/auth.middleware');
+
+
 var sessionMiddleware=require('./middlewares/session.middlewares');
+const cartMiddleware=require('./middlewares/cartTotal');
 
 app.use(express.static('public'));
 app.use(bodyParser.json()) // for parsing application/json
@@ -22,6 +24,8 @@ mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true });
 
 app.set('view engine', 'pug');
 app.set('views', './views');
+
+app.use(cartMiddleware.checkCount); 
 
 app.use('/',homeRoutes);
 app.use('/auth',authRoutes);
